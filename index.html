@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>I'm a Feminist</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&amp;subset=korean" rel="stylesheet">
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<style>
+		body{background:black;color: white;}
+		html {
+			scroll-behavior: smooth;
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		*{font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*설명글*/
+		.explain{font-size: 22px; line-height: 40px; font-weight: bold;}
+/*메뉴바*/
+		.navbar{overflow: hidden; position: fixed; top: 10px; z-index: 99; margin-left: 10px;}
+		.navbar a { display: block; color: white; text-align: left; padding: 8px 0px; font-size: 16px; text-decoration: none;}
+		.navbar a:hover { color: red;}
+
+/*스크롤*/
+		#scrollmonitor{width: 100px; height: 40px; background: red; position: fixed;right: 0px; color: white; text-align: center;line-height: 40px; display: none;}
+
+
+/*텍스트*/
+		#womantextbox{position: relative; margin-bottom: 100px; width:800px; line-height: 70px; left: calc(50% - 400px); margin-top: 50px;height: 3700px; }
+			#womant1box{top: 100px; position: absolute; }
+				.womant1{font-size: 42px; font-weight: 700; letter-spacing: -1.5px;position: relative; }
+					.smallt{font-size: 28px; color: #ccc; letter-spacing: 0;}
+			#womant2box{position: absolute; top: 100px;}
+				.womant2{font-size: 42px; font-weight: 700; letter-spacing: -1.5px; position: relative;
+					-webkit-text-decoration-line: line-through; 
+					text-decoration-line: line-through; color: red; opacity: 0;}
+					.smallt2{font-size: 28px; letter-spacing: 0;}
+
+		
+
+/*여신상*/
+		#statuebox{position: relative; width: 800px; margin: auto; margin-bottom: 300px; }
+		#statueimg{width: 750px; left:calc(50% - 375px); cursor: pointer; position: relative;}
+
+
+/*슬라이더*/
+		#slidebox{width: 800px; position: relative; left:calc(50% - 400px); margin-bottom: 100px; }
+
+			.slidecontainer{ width: 800px; left:calc(50% - 400px); bottom: 0; position: relative;}
+				.slider{-webkit-appearance:none; width: 100%; height: 5px; background:#d3d3d3; outline: none;}
+		
+				.slider::-webkit-slider-thumb {
+					-webkit-appearance:none; 
+					appearance:none; 
+					width: 25px; 
+					height: 25px; 
+					background: black; 
+					cursor: pointer; 
+					border-radius: 50%;
+					border-style: solid;
+					border-color: white;
+				}
+
+				.slider::-moz-range-thumb {
+					width: 25px; 
+					height: 25px; 
+					background: white; 
+					cursor: pointer; 
+				}
+
+		#imimgcontainer{width: 800px; height: 400px; padding: 0; margin: auto;  position: relative;}
+
+			.imimg{position:relative; width: 800px; padding-top: 150px;}
+
+
+
+/*문장 만들기 droptarget*/
+		#dragbox{position: relative; width: 800px;  left: calc(50% - 400px);margin-bottom: 700px; height:500px;margin-top: 200px;}
+		
+		#dragtextbox{position: relative; width: 800px; left: calc(50% - 400px); top: 0px; height:250px;}
+			.dragtext1{position: absolute; width: 800px; top: 50px; left:calc(50% - 400px); }
+			.dragtext2{position: absolute; width: 800px; top:120px; left:calc(50% - 400px);}
+
+
+				.droptarget {height: 35px; margin: 10px; width: 95px; border-bottom : 1px solid white; position: absolute; font-size: 14px;}
+				.shuffle1{ position: absolute;}
+				.shuffle2{ position: absolute;}
+
+
+		.dragempty{position: relative; width: 800px; height: 170px; left: calc(50% - 400px); top: 0px; }
+
+		/*버튼*/
+		.button{ background: black; border: 1px solid white; position: absolute; left: 10px; top: 180px; text-align: center; color: white;  }			
+
+/*점선*/	
+		.dash{position: relative; width: 800px; height: 10px; margin: auto; border-top: 2px dashed grey; margin-bottom: 200px;}	
+
+/*푸터*/
+		footer {color: grey; height: 130px; position: relative; width: 1000px; margin:auto; margin-top: 200px;}
+		#footerleft{width: 700px; right: 0px; position: absolute;}
+		#footerright{width: 300px; left: 0px; position: absolute;}
+
+		
+	</style>
+</head>
+<body>
+	<header>
+		
+	</header>
+	<div class="navbar">
+		<p style="font-size: 16px;">당신에게 알려주고 싶은 것들</p>
+		<a href="#womantextbox" id="menu1">Message 1</a>
+		<a href="#statuebox" id="menu2">Message 2</a>
+		<a href="#slidebox" id="menu3">Message 3</a>
+		<a href="#dragbox" id="menu4">Message 4</a>
+	</div>
+
+	<div id="scrollmonitor"></div>
+
+
+	</section>
+	<section id="womantextbox">
+		<h1>1. 미디어는 현실을 반영한다</h1>
+	<div id="womant1box">
+		<div class="womant1">
+			어찌 보면 여자가 결혼을 생각하지 않는 것처럼 매력 없는 일이 없었다. 이건 무슨 깊은 뜻을 얹어 하는 말이 아니라 그 늙은 처녀들에게선 어떤 결핍감이나 알 수 없는 불결감 같은 것이 느껴져 오곤 했기에 하는 소리다
+			<span class="smallt">_이청준&lsquo;씌어지지 않은 자서전&rsquo;,1994.</span><br>
+		</div>
+		<div class="womant1">
+			그 여자의 몸은 더러웠다. 그 여자는 쉽게 수줍음에서 벗어났다. 다리 사이에서 지독한 젓국 냄새가 퍼져나왔다
+			<span class="smallt">_김훈&lsquo;칼의노래&rsquo;, 2001.</span>
+		</div>
+		<div class="womant1">
+			등과 가슴의 차이가 없는 여자가 탱크톱을 입는 것은 남자 입장에선 테러를 당하는 기분
+			<span class="smallt">_&lsquo;남자 마음 설명서&rsquo;,2007.</span>
+		</div>
+		<div class="womant1">
+			여기자들이 모두 그쪽처럼 생겼다면 이 여성 권리 운동을 더 심각하게 생각해 보고 싶은 마음도 드는군요
+			<span class="smallt">_&lsquo;Cloud Atlas&rsquo;, 2012.</span>
+		</div>
+		<div class="womant1">
+			처음 업어보는 처녀의 무게만하겠네 처음 배에 올려보는 여자의 희고 미끄러운 허벅지 무게만하겠네
+			<span class="smallt">_장석남&lsquo;꽃이 무거운 꽃나무여&rsquo;, 2012.</span>
+		</div>
+		<div class="womant1">
+			마누라가 준 용돈으로 용돈 준 여자가 다른 남자랑 공항버스 타고 사라지는 뒷모습 보고 와서 그새 바뀐 전화번호 찾아 헤매고 있는 나의 순정해 대해
+			<span class="smallt">_류근&lsquo;사랑은 아직도 끝나지 않았네&rsquo;,2014.</span>
+		</div>
+		<div class="womant1">
+			여자는 정말로 꽃과 같은 존재여서 한창 피어날 때 잠시 눈부신 자태를 유지할 수 있을 뿐 그로부터 몇 년만 지나면 바람만 건듯 불어도 낙화유수 같은 신세가 되어 홀로 비애로움에 가슴이 저려오기 마련인 모양이었다
+			<span class="smallt">_이외수&lsquo;완전변태&rsquo;,2014.</span>
+		</div>
+		<div class="womant1">
+			나는 어떻게든 마흔 넘기기 전에 이 숫처녀를 죽여버릴 순 없을까 싶어 끙끙 앓는 것이다
+			<span class="smallt">_류근&lsquo;여자와 개와 비와 나&rsquo;,2014.</span>
+		</div>
+		<div class="womant1">
+			그러나 우산대로 여편네를 때려눕혔을 때 우리들의 옆에서는 어린놈이 울었고(중략) 아까운 것이 지우산을 현장에 버리고 온 일이었다
+			<span class="smallt">_김수영&lsquo;죄와 벌&rsquo;,2014.</span>
+		</div>
+		<div class="womant1">
+			넌 변기야, 내가 싸고 싶을 때 아무 때나 싸는 변기
+			<span class="smallt">_&lsquo;리턴&rsquo;,2018.</span><br>
+			오, 여기는 완전히 꽃밭이네. 그런데 이 많은 꽃 중에서 이 꽃이 가장 싱싱한 것 같다
+			<span class="smallt">_&lsquo;또!오해영&rsquo;,2016.</span>
+		</div>
+		<div class="womant1">
+			저 년이 아무리 예쁘게 단장을 하고 치맛자락을 살랑거리며 화냥기를 드러내 보여도 절대로 거들떠 보지 말아라
+			<span class="smallt">_이외수&lsquo;단풍&rsquo;,2018.</span>
+		</div>
+		<div class="womant1">
+			야, 서빙은 여자가 해야지. 남자가 하면 주점에 누가 오냐?
+			<span class="smallt">_&lsquo;내 아이디는 강남미인&rsquo;,2018.</span>
+		</div>
+	</div>
+
+	<!--처음 텍스트 스크롤시 등장-->
+	<div id="womant2box">
+		
+		<div class="womant2" id="line1">
+			어찌 보면 여자가 결혼을 생각하지 않는 것처럼 매력 없는 일이 없었다. 이건 무슨 깊은 뜻을 얹어 하는 말이 아니라 그 늙은 처녀들에게선 어떤 결핍감이나 알 수 없는 불결감 같은 것이 느껴져 오곤 했기에 하는 소리다
+			<span class="smallt2">_이청준&lsquo;씌어지지 않은 자서전&rsquo;,1994.</span><br>
+		</div>
+		<div class="womant2" id="line2">
+			그 여자의 몸은 더러웠다. 그 여자는 쉽게 수줍음에서 벗어났다. 다리 사이에서 지독한 젓국 냄새가 퍼져나왔다
+			<span class="smallt2">_김훈&lsquo;칼의노래&rsquo;, 2001.</span>
+		</div>
+		<div class="womant2" id="line3">
+			등과 가슴의 차이가 없는 여자가 탱크톱을 입는 것은 남자 입장에선 테러를 당하는 기분
+			<span class="smallt2">_&lsquo;남자 마음 설명서&rsquo;,2007.</span>
+		</div>
+		<div class="womant2" id="line4">
+			여기자들이 모두 그쪽처럼 생겼다면 이 여성 권리 운동을 더 심각하게 생각해 보고 싶은 마음도 드는군요
+			<span class="smallt2">_&lsquo;Cloud Atlas&rsquo;, 2012.</span>
+		</div>
+		<div class="womant2" id="line5">
+			처음 업어보는 처녀의 무게만하겠네 처음 배에 올려보는 여자의 희고 미끄러운 허벅지 무게만하겠네
+			<span class="smallt2">_장석남&lsquo;꽃이 무거운 꽃나무여&rsquo;, 2012.</span>
+		</div>
+		<div class="womant2" id="line6">
+			마누라가 준 용돈으로 용돈 준 여자가 다른 남자랑 공항버스 타고 사라지는 뒷모습 보고 와서 그새 바뀐 전화번호 찾아 헤매고 있는 나의 순정해 대해
+			<span class="smallt2">_류근&lsquo;사랑은 아직도 끝나지 않았네&rsquo;,2014.</span>
+		</div>
+		<div class="womant2" id="line7">
+			여자는 정말로 꽃과 같은 존재여서 한창 피어날 때 잠시 눈부신 자태를 유지할 수 있을 뿐 그로부터 몇 년만 지나면 바람만 건듯 불어도 낙화유수 같은 신세가 되어 홀로 비애로움에 가슴이 저려오기 마련인 모양이었다
+			<span class="smallt2">_이외수&lsquo;완전변태&rsquo;,2014.</span>
+		</div>
+		<div class="womant2" id="line8">
+			나는 어떻게든 마흔 넘기기 전에 이 숫처녀를 죽여버릴 순 없을까 싶어 끙끙 앓는 것이다
+			<span class="smallt2">_류근&lsquo;여자와 개와 비와 나&rsquo;,2014.</span>
+		</div>
+		<div class="womant2" id="line9">
+			그러나 우산대로 여편네를 때려눕혔을 때 우리들의 옆에서는 어린놈이 울었고(중략) 아까운 것이 지우산을 현장에 버리고 온 일이었다
+			<span class="smallt2">_김수영&lsquo;죄와 벌&rsquo;,2014.</span>
+		</div>
+		<div class="womant2" id="line10">
+			넌 변기야, 내가 싸고 싶을 때 아무 때나 싸는 변기
+			<span class="smallt2">_&lsquo;리턴&rsquo;,2018.</span>
+		</div>
+		<div class="womant2" id="line11">
+			오, 여기는 완전히 꽃밭이네. 그런데 이 많은 꽃 중에서 이 꽃이 가장 싱싱한 것 같다
+			<span class="smallt2">_&lsquo;또!오해영&rsquo;,2016.</span>
+		</div>
+		<div class="womant2" id="line12">
+			저 년이 아무리 예쁘게 단장을 하고 치맛자락을 살랑거리며 화냥기를 드러내 보여도 절대로 거들떠 보지 말아라
+			<span class="smallt2">_이외수&lsquo;단풍&rsquo;,2018.</span>
+		</div>
+		<div class="womant2" id="line13">
+			야, 서빙은 여자가 해야지. 남자가 하면 주점에 누가 오냐?
+			<span class="smallt2">_&lsquo;내 아이디는 강남미인&rsquo;,2018.</span>
+		</div>
+	</div>
+		
+
+		<p class="explain" style=" top: 3200px; position: absolute;"  >
+			<br><br><br><br>
+			_<br>
+			여성을 차별해온 과거가 있고, 그 차별이 현존하며, 앞으로도 계속될 것이 자명한 상황에서 여성들은 그 어떠한 사소한 차별 발언도 가볍게 넘길 수 없는것이다.<br>
+			<span style="font-size: 18px; color: grey">홍성수,&lsquo;말이 칼이될때&rsquo;</span></p>
+		
+	</section>
+
+	<!--점선-->
+	<div class="dash"></div>
+
+	<!--여신상-->
+
+	<section id="statuebox">
+			<h1>2. 평가의 기준</h1>
+			<h2 style="font-size: 18px;">  당신의 점수는 몇점인가요? 클릭하여 확인해 보세요.</h2>
+			<img src="statuestop.jpg" id="statueimg">
+
+			<p class="explain">
+				_<br>
+				사회는 ‘여성’의 신체에 이상적인 기준을 두고 그 기준을 넘는 여성에게는 ‘여성’임을 허락하지 않는다. 여성의 신체는 언제나 조각조각 잘게 나뉘어 평가받고, 옳고 그름에대해 논하여 진다. 여성의 가치는 개인의 지성, 인성등이 아닌 미모, 몸매, 나이 로 평가된다.<br>
+			</p>
+
+
+	</section>
+
+	<!--점선-->
+	<div class="dash"></div>
+	
+	<!--슬라이더-->
+
+	<section id="slidebox">
+		<h1>3. 목소리를 내는 것에 대하여</h1><br><br>
+
+		<div id="imimgcontainer">
+			<img src="./im/im1.png" class="imimg" id="monitor">
+		</div>
+		<div class="slidecontainer">
+			<input type="range" min="1" max="23" value="1" class="slider" id="myRange">
+			<p> drag it!</p>
+			<p style="color: black">Value <span id="demo"></span></p>
+		</div>
+
+		<p class="explain">
+			<br><br><br><br>
+			_<br>
+			페미니즘 백래시<br>
+			프로필 사진, 상태메시지, 티셔츠, 핸드폰 케이스 등 사소한 물건이나 행동을 단서로 ‘메갈’낙인을 찍는다. 페미니스트라는 것을 밝혔다는 이유로 수많은 여성들은 직장에서, 학교에서, 가정에서, 지역사회에서, 온라인에서 낙인찍히고, 추궁당하고, 퇴출당했다. <br>
+			</p>
+	</section>
+
+	<!--점선-->
+	<div class="dash"></div>
+
+	<!--드래그드롭-->
+	<section id="dragbox">
+		<h1>4. 중립과 가해</h1>
+		<h2 style="font-size: 18px;">텍스트를 드래그해 문장을 만들어 보세요</h2>
+	<div id="dragtextbox">
+		
+		<div class="dragtext1">
+			<div class="droptarget shuffle1" style="left:0px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget1">중립은</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:110px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget2">가해자에게만</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:220px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget3">이로울 뿐</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:330px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget4">피해자에게는</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:440px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget5">아무런</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:550px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget6">도움이</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:660px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget7">되지</p>
+			</div>
+		</div>
+		<div class="dragtext2">
+			<div class="droptarget shuffle2" style="left:0px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget8">않으며</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:110px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget9">침묵은</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:220px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget10">결국</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:330px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget11">괴롭히는 사람</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:440px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget12">편에</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:550px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget13">서 있는</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:660px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget14">것이다</p>
+			</div>
+		</div>
+		
+	</div>
+
+		<div class="dragempty">
+			<div class="droptarget" style="left:0px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:110px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:220px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:330px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:440px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:550px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:660px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:0px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:110px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:220px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:330px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:440px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:550px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:660px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+			<button type="submit"  onClick="refreshPage()" class="button">Restart</button>
+			
+		</div>
+
+		<p class="explain">
+			<br><br><br><br>
+			_<br>
+			달리는 기차 위에 중립은 없다.<br>
+			이미 사태가 어떤한 방향으로 움직이고 있는데, 중립을 지킨다면 이는 그 방향을 받아들이겠다는 판단과 같다. 대한민국 여성들의 현실이 드러나고 있음에도 기계적 중립을 고수하는 이들은 결국 힘있는 쪽에 편승 하고 있는 것이다.
+			</p>
+	</section>
+
+
+	<footer>
+		<div id="footerright">
+			<p>
+				-<br>
+				Daeun Shin<br>
+				danee_e@naver.com<br>
+				HKNU Design
+
+			</p>
+		</div>
+		<div id="footerleft">
+			<p>
+			-<br>
+			한국에서 여성의 인권은 여전히 낮으며, 사회에는 여성 차별이 만연합니다. 
+			다수의 문학작품에서 여성은 성적으로 대상화 되고 여성 캐릭터는 성적으로 소비되며 수단화 되고 있습니다. 이 페이지는 한국 사회에서 아직도 만연한 여성차별과 여성혐오에 대해 알리고 문제제기 하기 위해 제작되었습니다.</p>
+		</div>
+	</footer>
+
+
+	<script>
+
+		//--스크롤 모니터, 라인--//
+
+
+		window.onscroll = function(){
+		
+			var c = document.documentElement. scrollTop;
+			scrollmonitor.innerHTML = c + "px";
+
+			if(c==0){
+	         for(var i = 0; i<cc.length;i++){
+	            cc[i].style.opacity = 0;
+	      	  }
+
+	      	}else if (c<100){
+	      	menu1.style.color = "red";
+	      	menu2.style.color = "white";
+	      	menu3.style.color = "white";
+	      	menu4.style.color = "white";
+	         line1.style.opacity = 0;
+	         line2.style.opacity = 0;
+	         line3.style.opacity = 0;
+	         line4.style.opacity = 0;
+	         line5.style.opacity = 0;
+	         line6.style.opacity = 0;
+	         line7.style.opacity = 0;
+	         line8.style.opacity = 0;
+	         line9.style.opacity = 0;
+	         line10.style.opacity = 0;
+	         line11.style.opacity = 0;
+	         line12.style.opacity = 0;
+	         line13.style.opacity = 0;
+			}else if (c<200){
+				line1.style.opacity = 1;
+				line2.style.opacity = 0;
+			}else if (c<400){
+				line2.style.opacity = 1;
+				line3.style.opacity = 0;
+			}else if (c<600){
+				line3.style.opacity = 1;
+				line4.style.opacity = 0;
+			}else if (c<800){
+				line4.style.opacity = 1;
+				line5.style.opacity = 0;
+			}else if (c<1000){
+				line5.style.opacity = 1;
+				line6.style.opacity = 0;
+			}else if (c<1300){
+				line6.style.opacity = 1;
+				line7.style.opacity = 0;
+			}else if (c<1600){
+				line7.style.opacity = 1;
+				line8.style.opacity = 0;
+			}else if (c<1900){
+				line8.style.opacity = 1;
+				line9.style.opacity = 0;
+			}else if (c<2100){
+				line9.style.opacity = 1;
+				line10.style.opacity = 0;
+			}else if (c<2400){
+				line10.style.opacity = 1;
+				line11.style.opacity = 0;
+			}else if (c<2700){
+				line11.style.opacity = 1;
+				line12.style.opacity = 0;
+			}else if (c<2800){
+				line12.style.opacity = 1;
+				line13.style.opacity = 0;
+			}else if (c<3100){
+				line13.style.opacity = 1;	
+			}else if (c<3700){
+				line13.style.opacity = 1;
+				menu1.style.color = "red";
+	      		menu2.style.color = "white";
+	      		menu3.style.color = "white";
+	      		menu4.style.color = "white";
+	      		
+			}else if (c<5300){
+				menu1.style.color = "white";
+				menu2.style.color = "red";
+				menu3.style.color = "white";
+				menu4.style.color = "white";
+			}else if (c<6600){
+				line13.style.opacity = 1;
+				menu1.style.color = "white";
+	      		menu2.style.color = "white";
+	      		menu3.style.color = "red";
+	      		menu4.style.color = "white";	
+			}else if (c<7400){
+				line13.style.opacity = 1;
+				menu1.style.color = "white";
+	      		menu2.style.color = "white";
+	      		menu3.style.color = "white";
+	      		menu4.style.color = "red";
+	      		
+			}
+
+
+		}
+
+
+
+		//--여신상 --//
+		statueimg.onclick = function(){
+			statueimg.setAttribute("src","statuegif.gif");
+		}
+		//		<img src="statuegif.gif" id="statueimg">
+
+		//--슬라이더--//
+		var slider = document.getElementById("myRange");
+		var output = document.getElementById("demo");
+		output.innerHTML = slider.value;
+
+		slider.oninput = function() {
+			output.innerHTML = this.value;
+			monitor.src = "./im/im"+ this.value +".png";
+
+			console.log(this.value);
+		}
+
+
+		
+		
+
+		//--드래그앤드롭--//
+		function dragStart(event){
+			event.dataTransfer.setData("Text",event.target.id);
+			console.log(event.target.id);
+		}
+		function allowDrop(event) {
+			event.preventDefault();
+		}
+		function drop(event){
+			event.preventDefault();
+			var data = event.dataTransfer.getData("Text");
+			console.log(data);
+			event.target.appendChild(document.getElementById(data));
+		}
+
+		//--드래그앤드롭 셔플1--//
+		//클래스 이름과 아이템 간격을 인자로 실행한다.
+		shuffleArray("shuffle1",110);
+
+		function shuffleArray(cName,gap){
+			var t = document.getElementsByClassName(cName);
+			//클래스 숫자만큼 배열을 만들고 간격의 배수로 left값을 설정
+			var j = [];
+			for(var i=0; i<t.length; i++){
+				j.push(i*gap + "px");
+			}
+
+			//left값의 배열이 j에 저장되는데 이 배열을 섞는다.
+			shuffle(j);
+
+			//다시 클래스 아이템들에 새로운 left값을 지정한다.
+			for(i=0; i<t.length; i++){
+				t[i].style.left = j[i];
+			}
+
+			//shuffle함수
+			function shuffle(a) {
+				var j,x,i;
+				for(i=a.length - 1; i>0; i--){
+					j =  Math.floor(Math.random() * (i +1));
+					x = a[i]; a[i]=a[j]; a[j] = x;
+				}
+				return a;
+			}
+		}
+
+		//--드래그앤드롭 셔플2--//
+		//클래스 이름과 아이템 간격을 인자로 실행한다.
+		shuffleArray("shuffle2",110);
+
+		function shuffleArray(cName,gap){
+			var t = document.getElementsByClassName(cName);
+			//클래스 숫자만큼 배열을 만들고 간격의 배수로 left값을 설정
+			var j = [];
+			for(var i=0; i<t.length; i++){
+				j.push(i*gap + "px");
+			}
+
+			//left값의 배열이 j에 저장되는데 이 배열을 섞는다.
+			shuffle(j);
+
+			//다시 클래스 아이템들에 새로운 left값을 지정한다.
+			for(i=0; i<t.length; i++){
+				t[i].style.left = j[i];
+			}
+
+			//shuffle함수
+			function shuffle(a) {
+				var j,x,i;
+				for(i=a.length - 1; i>0; i--){
+					j =  Math.floor(Math.random() * (i +1));
+					x = a[i]; a[i]=a[j]; a[j] = x;
+				}
+				return a;
+			}
+		}
+
+		//재시작 버튼
+		function refreshPage(){
+			window.location.reload();
+			refreshPage.style.cursor = "pointer";
+		} 
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+	</script>
+</body>
+</html>
